@@ -16,4 +16,11 @@ pnpm run dev
 2. [classname库](https://github.com/JedWatson/classnames)
 3. tailwind和classname库不冲突
 4. css Modules和sass一起用，文件名后缀：.module.sass
-5. 
+5. 渲染方式
+   1. client-side render
+   2. pre-render
+      1. Static Generation(渲染时，有数据/无数据，都行)
+      2. Server-side Rendering（场景：每次请求页面时都需要重新获取数据）
+6. gray-matter库解析markdown内YAML的元数据格式
+7. getStaticProps只运行在 **Server-side** 不会运行在 **Client-side**
+8. [SWR](https://swr.vercel.app/zh-CN)用于数据请求的 React Hooks 库
