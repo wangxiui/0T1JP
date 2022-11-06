@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <>
+    <div>
       <section>
         <p>Hello, I'm wangxiui. Welcome!</p>
         <p>
@@ -15,6 +15,6 @@ export default function Home() {
           <li><h1>1111</h1></li>
         </ul>
       </section>
-    </>
+    </div>
   )
 }
