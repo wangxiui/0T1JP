@@ -1,12 +1,13 @@
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from 'next/head';
-// import {useRouter} from 'next/router';
+import Router from 'next/router';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
+import { GetStaticProps, GetStaticPaths } from "next";
 
-// const router = useRouter()
-// console.log('useRouter---', router);
+const router = Router
+console.log('Router---', router);
 export default function Post({postData}) {
   return (
     <Layout>
@@ -26,7 +27,7 @@ export default function Post({postData}) {
   )
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   // Return a list of possible value for id
   const paths = getAllPostIds();
   return {
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params.id);
   return {

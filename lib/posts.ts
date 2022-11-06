@@ -9,7 +9,7 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const allPostsData = fileNames.map((fileName): {id: string, title: string, date: string} => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
 
@@ -23,7 +23,7 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...matterResult.data as {title: string, date: string, data: string},
     };
   });
   // Sort posts by date
