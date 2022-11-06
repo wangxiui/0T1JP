@@ -1,12 +1,12 @@
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from 'next/head';
-import {useRouter} from 'next/router';
+// import {useRouter} from 'next/router';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 
-const router = useRouter()
-console.log('useRouter---', router);
+// const router = useRouter()
+// console.log('useRouter---', router);
 export default function Post({postData}) {
   return (
     <Layout>
