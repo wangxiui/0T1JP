@@ -89,14 +89,14 @@ export default function Footer() {
           <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
         </div>
         <div className="flex items-center">
-          <span className="text-white">Crafted by</span>
-          <Link href="https://vercel.com" aria-label="Vercel.com Link">
-            <img
-              src="/vercel.svg"
-              alt="Vercel.com Logo"
-              className="inline-block h-6 ml-4 text-white"
-            />
-          </Link>
+          <span className="text-white">Crafted by wangxiui</span>
+          {/*<Link href="https://vercel.com" aria-label="Vercel.com Link">*/}
+          {/*  <img*/}
+          {/*    src="/vercel.svg"*/}
+          {/*    alt="Vercel.com Logo"*/}
+          {/*    className="inline-block h-6 ml-4 text-white"*/}
+          {/*  />*/}
+          {/*</Link>*/}
         </div>
       </div>
     </footer>

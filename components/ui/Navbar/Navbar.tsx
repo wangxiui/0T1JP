@@ -13,9 +13,6 @@ const Navbar = () => {
 
   return (
     <nav className={s.root}>
-      <Link href="#skip" className="sr-only focus:not-sr-only">
-        Skip to content
-      </Link>
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex justify-between align-center flex-row py-4 md:py-6 relative">
           <div className="flex flex-1 items-center">
