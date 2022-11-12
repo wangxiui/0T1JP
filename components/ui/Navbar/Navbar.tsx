@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import s from './Navbar.module.css';
+import s from './Navbar.module.scss';
 
 import Logo from 'components/icons/Logo';
 import { useRouter } from 'next/router';

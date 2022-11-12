@@ -1,6 +1,6 @@
 
 
-import s from './LoadingDots.module.css';
+import s from './LoadingDots.module.scss';
 
 const LoadingDots = () => {
   return (
