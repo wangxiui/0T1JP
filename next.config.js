@@ -5,7 +5,7 @@
 * @date: 2022-11-06
 */
 
-export default {
+module.exports = {
   async redirects() {
     return [
       {
