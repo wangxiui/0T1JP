@@ -9,15 +9,15 @@ import styles from 'styles/index.module.scss'
 import cn from "classnames";
 
 interface Props {
-  wordsData: {id: string, data: {jp: string, cn: string}[]}
+  wordsData: {id: string, data: any[]}
 }
 
 export default function Home(props: Props) {
   const settings = {
     dots: false,
-    autoplay: true,
+    // autoplay: true,
     infinite: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
