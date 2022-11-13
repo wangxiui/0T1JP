@@ -1,10 +1,10 @@
 
 .root {
-    @apply sticky top-0 bg-black z-40 transition-all duration-150;
+        @apply sticky top-0 bg-white z-40 transition-all duration-150 shadow-lg shadow-gray-100;
 }
 
 .link {
-    @apply inline-flex items-center leading-6 font-medium transition ease-in-out duration-75 cursor-pointer text-zinc-200 rounded-md p-1;
+    @apply inline-flex items-center leading-6 font-medium transition ease-in-out duration-75 cursor-pointer text-zinc-200 rounded-md p-1 text-cyan-500;
 }
 
 .link:hover {

@@ -21,17 +21,18 @@ const Navbar = () => {
                 <Logo />
               </span>
             </Link>
-            <nav className="space-x-2 ml-6 hidden lg:block">
+
+            {/*<nav className="space-x-2 ml-6 hidden lg:block">
               <Link href="/">
                 <span className={s.link}>Pricing</span>
               </Link>
               <Link href="/account">
                 <span className={s.link}>Account</span>
               </Link>
-            </nav>
+            </nav>*/}
           </div>
 
-          <div className="flex flex-1 justify-end space-x-8">
+          {/*<div className="flex flex-1 justify-end space-x-8">
             {1 ? (
               <span
                 className={s.link}
@@ -47,7 +48,7 @@ const Navbar = () => {
                 <span className={s.link}>Sign in</span>
               </Link>
             )}
-          </div>
+          </div>*/}
         </div>
       </div>
     </nav>

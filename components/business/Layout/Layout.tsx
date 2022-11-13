@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import Navbar from 'components/ui/Navbar';
-import Footer from 'components/ui/Footer';
+import Navbar from '@/components/ui/Navbar';
+import Footer from '@/components/ui/Footer';
 import { ReactNode } from 'react';
 import { PageMeta } from 'types/subscribe';
 
@@ -25,7 +25,7 @@ export default function Layout({ children, meta: pageMeta }: Props) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <link href="/favicon.ico" rel="shortcut icon" />
+        <link href="/public/favicon.ico" rel="shortcut icon" />
         <meta content={meta.description} name="description" />
         <meta property="og:url" content={`https://subscription-starter.vercel.app${router.asPath}`} />
         <meta property="og:type" content="website" />
@@ -40,9 +40,12 @@ export default function Layout({ children, meta: pageMeta }: Props) {
         <meta name="twitter:image" content={meta.cardImage} />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Navbar />
-      <main id="skip">{children}</main>
-      {/*<Footer />*/}
+
+      <div className="h-full flex flex-col">
+        <Navbar />
+        <main id="skip" className="h-10 flex-grow">{children}</main>
+        {/*<Footer />*/}
+      </div>
     </>
   );
 }

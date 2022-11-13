@@ -7,6 +7,7 @@ specifiers:
   '@mui/material': ^5.10.13
   '@types/node': 18.11.9
   '@types/react': 18.0.25
+  animate.css: ^4.1.1
   autoprefixer: ^10.4.13
   classnames: ^2.3.2
   date-fns: ^2.29.3
@@ -16,9 +17,11 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-merge-refs: ^2.0.1
+  react-slick: ^0.29.0
   remark: ^14.0.2
   remark-html: ^15.0.1
   sass: ^1.56.0
+  slick-carousel: ^1.8.1
   stripe: ^10.17.0
   swr: ^1.3.0
   tailwindcss: ^3.2.2
@@ -29,6 +32,7 @@ dependencies:
   '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
   '@mui/icons-material': 5.10.9_4tcfjhohj57yvze6zkot3vymie
   '@mui/material': 5.10.13_thp4wrxo45nyllusrnt46mid4u
+  animate.css: r2.cnpmjs.org/animate.css/4.1.1
   classnames: 2.3.2
   date-fns: 2.29.3
   gray-matter: 4.0.3
@@ -36,8 +40,10 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-merge-refs: 2.0.1
+  react-slick: 0.29.0_biqbaboplfbrettd7655fr4n2y
   remark: 14.0.2
   remark-html: 15.0.1
+  slick-carousel: r2.cnpmjs.org/slick-carousel/1.8.1
   stripe: 10.17.0
   swr: 1.3.0_react@18.2.0
 
@@ -1518,6 +1524,21 @@ packages:
     resolution: {integrity: sha512-pywF6oouJWuqL26xV3OruRSIqai31R9SdJX/I3gP2q8jLxUnA1IwXcLW8werUHLZOrp4N7YOeQNZrh/BKrHI4A==}
     dev: false
 
+  /react-slick/0.29.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-TGdOKE+ZkJHHeC4aaoH85m8RnFyWqdqRfAGkhd6dirmATXMZWAxOpTLmw2Ll/jPTQ3eEG7ercFr/sbzdeYCJXA==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      classnames: 2.3.2
+      enquire.js: r2.cnpmjs.org/enquire.js/2.1.6
+      json2mq: r2.cnpmjs.org/json2mq/0.2.0
+      lodash.debounce: r2.cnpmjs.org/lodash.debounce/4.0.8
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      resize-observer-polyfill: r2.cnpmjs.org/resize-observer-polyfill/1.5.1
+    dev: false
+
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
@@ -1903,6 +1924,12 @@ packages:
       '@types/react': 18.0.25
     dev: false
 
+  r2.cnpmjs.org/animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/animate.css/-/animate.css-4.1.1.tgz}
+    name: animate.css
+    version: 4.1.1
+    dev: false
+
   r2.cnpmjs.org/ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz}
     name: ansi-styles
@@ -1975,6 +2002,12 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.1
       csstype: 3.1.1
+    dev: false
+
+  r2.cnpmjs.org/enquire.js/2.1.6:
+    resolution: {integrity: sha512-/KujNpO+PT63F7Hlpu4h3pE3TokKRHN26JYmQpPyjkRD/N57R7bPDNojMXdi7uveAKjYB7yQnartCxZnFWr0Xw==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/enquire.js/-/enquire.js-2.1.6.tgz}
+    name: enquire.js
+    version: 2.1.6
     dev: false
 
   r2.cnpmjs.org/error-ex/1.3.2:
@@ -2057,10 +2090,24 @@ packages:
     version: 2.3.1
     dev: false
 
+  r2.cnpmjs.org/json2mq/0.2.0:
+    resolution: {integrity: sha512-SzoRg7ux5DWTII9J2qkrZrqV1gt+rTaoufMxEzXbS26Uid0NwaJd123HcoB80TgubEppxxIGdNxCx50fEoEWQA==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/json2mq/-/json2mq-0.2.0.tgz}
+    name: json2mq
+    version: 0.2.0
+    dependencies:
+      string-convert: r2.cnpmjs.org/string-convert/0.2.1
+    dev: false
+
   r2.cnpmjs.org/lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz}
     name: lines-and-columns
     version: 1.2.4
+    dev: false
+
+  r2.cnpmjs.org/lodash.debounce/4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz}
+    name: lodash.debounce
+    version: 4.0.8
     dev: false
 
   r2.cnpmjs.org/loose-envify/1.4.0:
@@ -2119,6 +2166,12 @@ packages:
     version: 16.13.1
     dev: false
 
+  r2.cnpmjs.org/resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz}
+    name: resize-observer-polyfill
+    version: 1.5.1
+    dev: false
+
   r2.cnpmjs.org/resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/resolve-from/-/resolve-from-4.0.0.tgz}
     name: resolve-from
@@ -2126,11 +2179,25 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
+  r2.cnpmjs.org/slick-carousel/1.8.1:
+    resolution: {integrity: sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz}
+    name: slick-carousel
+    version: 1.8.1
+    peerDependencies:
+      jquery: '>=1.8.0'
+    dev: false
+
   r2.cnpmjs.org/source-map/0.5.7:
     resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/source-map/-/source-map-0.5.7.tgz}
     name: source-map
     version: 0.5.7
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  r2.cnpmjs.org/string-convert/0.2.1:
+    resolution: {integrity: sha512-u/1tdPl4yQnPBjnVrmdLo9gtuLvELKsAoRapekWggdiQNvvvum+jYF329d84NAa660KQw7pB2n36KrIKVoXa3A==, registry: http://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/string-convert/-/string-convert-0.2.1.tgz}
+    name: string-convert
+    version: 0.2.1
     dev: false
 
   r2.cnpmjs.org/supports-color/5.5.0:
