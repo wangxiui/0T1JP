@@ -8,7 +8,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 
 const router = Router
 console.log('Router---', router);
-export default function Post({postData}) {
+export default function Post({postData}: any) {
   return (
     <Layout>
       {/* Add this <Head> tag */}
@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   // Fetch necessary data for the blog post using params.id
   const postData = await getPostData(params.id);
   return {

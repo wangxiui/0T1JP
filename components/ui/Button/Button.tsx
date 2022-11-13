@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React, { forwardRef, useRef, ButtonHTMLAttributes } from 'react';
-import mergeRefs from 'react-merge-refs';
+// import mergeRefs from 'react-merge-refs';
 import styles from './Button.module.scss';
 
 import LoadingDots from 'components/ui/LoadingDots';
@@ -40,7 +40,7 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, buttonRef) => {
     <Component
       aria-pressed={active}
       data-variant={variant}
-      ref={mergeRefs([ref, buttonRef])}
+      // ref={mergeRefs([ref, buttonRef])}
       className={rootClassName}
       disabled={disabled}
       style={{
