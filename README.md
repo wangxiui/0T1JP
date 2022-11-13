@@ -26,5 +26,47 @@ pnpm run dev
 8. [SWR](https://swr.vercel.app/zh-CN)用于数据请求的 React Hooks 库
 9. 库：`remark、remark-html`。渲染markdown content
 10. [date-fns](https://date-fns.org/v2.16.1/docs/format)。格式化日期
+11. `styled-jsx`
+``` 
+export default () => (
+  <div className="root">
+    <style jsx>{`
+      .root {
+        color: green;
+      }
+    `}</style>
+  </div>
+)
+```
+12. `styled-components`
+```
+import Link from 'next/link'
+import styled from 'styled-components'
+
+const StyledLink = ({ as, children, className, href }) => (
+  <Link href={href} as={as} passHref>
+    <a className={className}>{children}</a>
+  </Link>
+)
+
+export default styled(StyledLink)`
+  color: #0075e0;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: #40a9ff;
+  }
+
+  &:focus {
+    color: #40a9ff;
+    outline: none;
+    border: 0;
+  }
+`
+```
+13. 
+    
+
 
 we are in demo branch.

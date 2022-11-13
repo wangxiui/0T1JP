@@ -1,0 +1,9 @@
+.my {
+  &-slider {
+    :global {
+      .slick-list{
+        overflow: initial;
+      }
+    }
+  }
+}
