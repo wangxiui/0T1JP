@@ -1,6 +1,7 @@
 const EXTERNAL_DATA_URL = 'https://jsonplaceholder.typicode.com/posts';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-function generateSiteMap(posts) {
+function generateSiteMap(posts: {id: string}[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <!--We manually set the two URLs we know already-->
@@ -27,7 +28,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export async function getServerSideProps({ res }) {
+export async function getServerSideProps({ res }: {res: NextApiResponse}) {
   // We make an API call to gather the URLs for our site
   const request = await fetch(EXTERNAL_DATA_URL);
   const posts = await request.json();
