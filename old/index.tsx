@@ -1,16 +1,16 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '@/components/business/Layout/Layout';
+import Layout from '@/components/business/Layout/Layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import { GetStaticProps, GetServerSideProps } from "next";
 
-export default function Home({allPostsData}) {
+export default function Home({allPostsData}: any) {
   return (
-    <Layout home>
+    <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        {/*<title>{siteTitle}</title>*/}
         {/*SEO*/}
         {/*<meta name="googlebot" content="noindex,nofollow" />*/}
         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
@@ -37,7 +37,7 @@ export default function Home({allPostsData}) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title }: any) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
