@@ -15,7 +15,7 @@ interface Props {
 export default function Home(props: Props) {
   const settings = {
     dots: false,
-    // autoplay: true,
+    autoplay: true,
     infinite: true,
     autoplaySpeed: 7000,
     slidesToShow: 1,
