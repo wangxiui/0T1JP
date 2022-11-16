@@ -19,4 +19,18 @@ module.exports = {
       },
     ];
   },
+
+  /*  solve next export error in Static HTML Export   START*/
+  images: {
+    unoptimized: true,
+  },
+  exportPathMap: async function(
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      "/": { page: "/" }
+    };
+  },
+  /*  solve next export error in Static HTML Export   END*/
 }
