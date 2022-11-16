@@ -380,7 +380,7 @@ components_business_Word__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_depende
 function Home(props) {
     const settings = {
         dots: false,
-        // autoplay: true,
+        autoplay: true,
         infinite: true,
         autoplaySpeed: 7000,
         slidesToShow: 1,
