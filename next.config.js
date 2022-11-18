@@ -7,7 +7,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  basePath: '/var/www/0T1JP/out',
+  basePath: '/0T1JP',
   compiler: {
     // styledComponents: true,
   },
