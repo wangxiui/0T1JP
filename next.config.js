@@ -7,6 +7,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
+  basePath: './',
   compiler: {
     // styledComponents: true,
   },
