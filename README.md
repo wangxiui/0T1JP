@@ -11,62 +11,10 @@
 pnpm run dev
 ```
 
-### 知识点
-1. 文件目录+名称 = 路由url  
-2. [classname库](https://github.com/JedWatson/classnames)
-3. tailwind和classname库不冲突
-4. css Modules和sass一起用，文件名后缀：.module.sass
-5. 渲染方式
-   1. client-side renderß
-   2. pre-render
-      1. Static Generation(渲染时，有数据/无数ß据，都行)
-      2. Server-side Rendering（场景：每次请求页面时都需要重新获取数据）
-6. gray-matter库解析markdown内YAML的元数据格式
-7. getStaticProps只运行在 **Server-side** 不会运行在 **Client-side**
-8. [SWR](https://swr.vercel.app/zh-CN)用于数据请求的 React Hooks 库
-9. 库：`remark、remark-html`。渲染markdown content
-10. [date-fns](https://date-fns.org/v2.16.1/docs/format)。格式化日期
-11. `styled-jsx`
-``` 
-export default () => (
-  <div className="root">
-    <style jsx>{`
-      .root {
-        color: green;
-      }
-    `}</style>
-  </div>
-)
-```
-12. `styled-components`
-```
-import Link from 'next/link'
-import styled from 'styled-components'
+项目基础路径
+> 不能用相对路径`./`。
+> 也不能以`/`结尾。
 
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
-13. 
-    
-
-
-we are in demo branch.
+设置基础路径是有必要的。  
+这样，图片资源 可以直接从指定目录找到。  
+不设置的话，nginx没有好方法直接指定目录。（html、css好像没这个问题。）
