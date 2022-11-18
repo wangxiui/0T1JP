@@ -24,6 +24,8 @@ module.exports = {
   /*  solve next export error in Static HTML Export   START*/
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './loaders/imgLoader.ts',
   },
   exportPathMap: async function(
     defaultPathMap,
