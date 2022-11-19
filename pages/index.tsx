@@ -2,6 +2,7 @@ import Layout from '@/components/business/Layout';
 // import Button from '@mui/material/Button';
 import Image from "next/image";
 import Word from 'components/business/Word'
+import MyImage from 'components/ui/MyImage'
 import Slider from "react-slick";
 import {GetStaticProps} from "next";
 import {getWordsData} from "../lib/words";
@@ -25,7 +26,7 @@ export default function Home(props: Props) {
   return (
     <Layout>
       <div className="overflow-auto w-full h-full my">
-        <Image width={1440} height={900} src="/0T1JP/images/background-tutorial.svg" className="w-full h-auto max-h-full object-cover object-center object-top fixed -z-10" alt="bg image" />
+        <MyImage width={1440} height={900} src="/images/background-tutorial.svg" className="w-full h-auto max-h-full object-cover object-center object-top fixed -z-10" />
         {/*<Button variant="contained">Contained</Button>*/}
         <div className='pt-10 h-full'>
           <Slider {...settings} className={cn('h-full', styles['my-slider'])}>
