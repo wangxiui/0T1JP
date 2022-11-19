@@ -26,7 +26,7 @@ export default function Home(props: Props) {
   return (
     <Layout>
       <div className="overflow-auto w-full h-full my">
-        <MyImage width={1440} height={900} src="/images/background-tutorial.svg" className="w-full h-auto max-h-full object-cover object-center object-top fixed -z-10" />
+        <MyImage width={1440} height={900} src="/images/background-tutorial.svg" className="w-full h-auto max-h-full object-cover object-center object-top fixed -z-10" alt='bg image' />
         {/*<Button variant="contained">Contained</Button>*/}
         <div className='pt-10 h-full'>
           <Slider {...settings} className={cn('h-full', styles['my-slider'])}>

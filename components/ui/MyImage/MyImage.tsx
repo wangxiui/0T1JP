@@ -1,15 +1,16 @@
 import cn from 'classnames';
 import React, { forwardRef, useRef, ButtonHTMLAttributes } from 'react';
-import styles from './Button.module.scss';
+import styles from './MyImage.module.scss';
 
 import Image from "next/image";
 
 interface Props {
   src?: string;
-  className?: 'slim' | 'flat';
+  className?: string;
   width?: number;
-  style?: {[p in string]: any};
   height?: number;
+  style?: {[p in string]: any};
+  alt?: string;
   [p: string]: any
 }
 
@@ -20,6 +21,7 @@ const MyImage = ((props: Props) => {
     width = 250,
     height = 250,
     style = {},
+    alt = '',
     ...rest
   } = props;
   const rootClassName = cn(
@@ -33,6 +35,7 @@ const MyImage = ((props: Props) => {
       height={height}
       src={`${basePath}/${src}`}
       className={rootClassName}
+      alt={alt}
       style={{
         ...style
       }}
