@@ -9,7 +9,7 @@ WORKDIR /app
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN npm i -g pnpm --registry=https://registry.npm.taobao.org/
-RUN pnpm i --registry=https://registry.npm.taobao.org/
+RUN pnpm i --registry=https://registry.npm.taobao.org/ --frozen-lockfile
 
 #RUN \
 #  if [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
@@ -61,5 +61,5 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["yarn", "start"]
-#CMD ["pnpm", "start"]
+#CMD ["yarn", "start"]
+CMD ["pnpm", "start"]
