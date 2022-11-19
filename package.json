@@ -4,6 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "static": "next build & next export",
     "pm2start": "pm2 start pnpm --name shishikangh5 -- start"
   },
   "dependencies": {
