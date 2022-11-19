@@ -6,35 +6,42 @@
 */
 /** @type {import('next').NextConfig} */
 
-module.exports = {
-  // assetPrefix: '/0T1JP',
-  // basePath: '/0T1JP',
-  compiler: {
-    // styledComponents: true,
-  },
-  async redirects() {
-    return [
-      {
-        source: '/about',
-        destination: '/',
-        permanent: true, // triggers 308
-      },
-    ];
-  },
+module.exports = (phase, { defaultConfig }) => {
+  // console.log('phase', phase);
+  // console.log('defaultConfig', defaultConfig);
 
-  /*  solve next export error in Static HTML Export   START*/
-  images: {
-    unoptimized: true,
-    // loader: 'custom',
-    // loaderFile: './loaders/imgLoader.ts',
-  },
-  exportPathMap: async function(
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" }
-    };
-  },
-  /*  solve next export error in Static HTML Export   END*/
+  // console.log('process.env', process.env);
+  // console.log('process.env.NODE_ENV', process.env.NODE_ENV); // development/production
+  return {
+    // assetPrefix: '/0T1JP',
+    basePath: process.env.NODE_ENV === 'production' ? '/0T1JP' : '',
+    compiler: {
+      // styledComponents: true,
+    },
+    async redirects() {
+      return [
+        {
+          source: '/about',
+          destination: '/',
+          permanent: true, // triggers 308
+        },
+      ];
+    },
+
+    /*  solve next export error in Static HTML Export   START*/
+    images: {
+      unoptimized: true,
+      // loader: 'custom',
+      // loaderFile: './loaders/imgLoader.ts',
+    },
+    exportPathMap: async function(
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+    ) {
+      return {
+        "/": { page: "/" }
+      };
+    },
+    /*  solve next export error in Static HTML Export   END*/
+  }
 }
