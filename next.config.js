@@ -7,7 +7,7 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  assetPrefix: '/0T1JP',
+  // assetPrefix: '/0T1JP',
   // basePath: '/0T1JP',
   compiler: {
     // styledComponents: true,
