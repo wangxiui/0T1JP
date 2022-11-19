@@ -8,8 +8,8 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN yarn global add pnpm
-RUN pnpm i
+RUN yarn global add pnpm --registry=http://r.cnpmjs.org/
+RUN pnpm i --registry=http://r.cnpmjs.org/
 
 #RUN \
 #  if [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i; \
