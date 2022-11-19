@@ -8,7 +8,9 @@ interface Props {
   src?: string;
   className?: 'slim' | 'flat';
   width?: number;
+  style?: {[p in string]: any};
   height?: number;
+  [p: string]: any
 }
 
 const MyImage = ((props: Props) => {
