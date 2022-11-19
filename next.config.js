@@ -15,6 +15,8 @@ module.exports = (phase, { defaultConfig }) => {
   return {
     // assetPrefix: '/0T1JP',
     basePath: process.env.NODE_ENV === 'production' ? '/0T1JP' : '',
+    // use dockerfile
+    output: 'standalone',
     compiler: {
       // styledComponents: true,
     },
