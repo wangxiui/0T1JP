@@ -8,7 +8,7 @@
 
 module.exports = {
   assetPrefix: '/0T1JP',
-  basePath: '/0T1JP',
+  // basePath: '/0T1JP',
   compiler: {
     // styledComponents: true,
   },
