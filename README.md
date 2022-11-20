@@ -1,5 +1,5 @@
 # 0T1JP
-> 从0开始学到N1
+> 从0开始学到N1。
 
 ## 安装
 [入门教程](https://www.nextjs.cn/learn/basics/create-nextjs-app/setup)
@@ -11,10 +11,14 @@
 pnpm run dev
 ```
 
-项目基础路径
-> 不能用相对路径`./`。
-> 也不能以`/`结尾。
+当前分支使用的静态资源部署,所以：
+- Dockerfile也不同
 
-设置基础路径是有必要的。  
-这样，图片资源 可以直接从指定目录找到。  
-不设置的话，nginx没有好方法直接指定目录。（html、css好像没这个问题。）
+### docker 步骤
+> http://www.dockerone.com/article/8834
+1. 获取 Nginx 镜像
+`docker pull nginx`
+2. 创建 Nginx Config配置文件
+3. 创建 Dockerfile 文件
+4. 基于该 Dockerfile 构建 应用镜像
+5. 启动 app 容器
