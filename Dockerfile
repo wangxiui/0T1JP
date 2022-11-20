@@ -31,7 +31,7 @@ COPY --from=install $APP_PATH/node_modules ./node_modules
 # 拷贝当前目录下的所有文件(除了.dockerignore里排除的)，都拷贝到工作目录下
 COPY . .
 
-RUN pnpm build
+RUN pnpm static
 
 EXPOSE 3000
 
