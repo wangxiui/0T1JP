@@ -22,8 +22,10 @@ RUN apk add --no-cache --update nodejs
 #  curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v${PNPM_VERSION}/pnpm-linuxstatic-x64" -o /bin/pnpm && chmod +x /bin/pnpm && \
 #  apk del curl
 
-RUN curl -fsSL https://get.pnpm.io/v6.16.js | node - add --global pnpm
-RUN mv /root/.local/share/pnpm/pnpm /usr/bin/
+RUN apk add --no-cache curl && \
+  curl -fsSL https://get.pnpm.io/v6.16.js | node - add --global pnpm && \
+  apk del curl && \
+  mv /root/.local/share/pnpm/pnpm /usr/bin/
 
 # 2. 基于基础镜像安装项目依赖
 FROM base AS install
