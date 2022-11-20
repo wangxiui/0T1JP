@@ -5,13 +5,17 @@ FROM alpine:3.15 AS base
 ENV NODE_ENV=production \
   APP_PATH=/app
 
+ARG PNPM_VERSION=7.1.9
+
 WORKDIR $APP_PATH
 
 # 使用国内镜像，加速下面 apk add下载安装alpine不稳定情况
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
-# 使用apk命令安装 nodejs 和 yarn
-RUN apk add --no-cache --update nodejs=18.12.1-r0 pnpm=7.5.1-r0
+# 使用apk命令安装 nodejs(最新) 和 pnpm（https://github.com/pnpm/pnpm/issues/784）
+#apk add --no-cache nodejs-current --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
+RUN apk add --no-cache --update nodejs \
+    curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v${PNPM_VERSION}/pnpm-linuxstatic-x64" -o /bin/pnpm; chmod +x /bin/pnpm;
 
 # 2. 基于基础镜像安装项目依赖
 FROM base AS install
