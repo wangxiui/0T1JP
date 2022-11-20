@@ -27,7 +27,7 @@ FROM base AS install
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install
+RUN pnpm install --registry=https://registry.npm.taobao.org/
 
 # 3. 基于基础镜像进行最终构建
 FROM base
