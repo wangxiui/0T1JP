@@ -14,7 +14,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 # 使用apk命令安装 nodejs(最新) 和 pnpm（https://github.com/pnpm/pnpm/issues/784）
 #apk add --no-cache nodejs-current --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
-RUN apk add --no-cache --update nodejs
+RUN apk add --no-cache --update nodejs && \
+    npm i -g pnpm
 
 #You can use this URL to get the latest pnpm release (REF):
 #https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64
@@ -22,10 +23,6 @@ RUN apk add --no-cache --update nodejs
 #  curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v${PNPM_VERSION}/pnpm-linuxstatic-x64" -o /bin/pnpm && chmod +x /bin/pnpm && \
 #  apk del curl
 
-RUN apk add --no-cache curl && \
-  curl -fsSL https://get.pnpm.io/install.sh | sh - | node - add --global pnpm && \
-  apk del curl && \
-  mv /root/.local/share/pnpm/pnpm /usr/bin/
 
 # 2. 基于基础镜像安装项目依赖
 FROM base AS install
