@@ -21,4 +21,6 @@ pnpm run dev
 2. 创建 Nginx Config配置文件
 3. 创建 Dockerfile 文件
 4. 基于该 Dockerfile 构建 应用镜像
+`docker build -t 0t1jp-static .`
 5. 启动 app 容器
+`docker run -d -p 3002:80 0t1jp-static`
