@@ -1,5 +1,7 @@
+#https://www.modb.pro/db/396519
+
 # 1. 构建基础镜像
-FROM alpine:3.15 AS base
+FROM node:16-alpine AS base
 #纯净版镜像
 
 ENV NODE_ENV=production \
@@ -7,22 +9,9 @@ ENV NODE_ENV=production \
 
 ARG PNPM_VERSION=7.1.9
 
+RUN npm -g install pnpm@${PNPM_VERSION} --registry=https://registry.npm.taobao.org/
+
 WORKDIR $APP_PATH
-
-# 使用国内镜像，加速下面 apk add下载安装alpine不稳定情况
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-
-# 使用apk命令安装 nodejs(最新) 和 pnpm（https://github.com/pnpm/pnpm/issues/784）
-#apk add --no-cache nodejs-current --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
-RUN apk add --no-cache --update nodejs curl && \
-    curl -sL https://unpkg.com/@pnpm/self-installer | node
-
-#You can use this URL to get the latest pnpm release (REF):
-#https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64
-#RUN apk add --no-cache curl && \
-#  curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v${PNPM_VERSION}/pnpm-linuxstatic-x64" -o /bin/pnpm && chmod +x /bin/pnpm && \
-#  apk del curl
-
 
 # 2. 基于基础镜像安装项目依赖
 FROM base AS install
