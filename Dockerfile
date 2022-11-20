@@ -14,7 +14,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 # 使用apk命令安装 nodejs(最新) 和 pnpm（https://github.com/pnpm/pnpm/issues/784）
 #apk add --no-cache nodejs-current --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
-RUN apk add --no-cache --update nodejs yarn pnpm && \
+RUN apk add --no-cache --update nodejs yarn && \
     yarn global add pnpm --registry=https://registry.npm.taobao.org/
 
 #You can use this URL to get the latest pnpm release (REF):
