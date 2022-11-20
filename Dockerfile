@@ -9,7 +9,7 @@ FROM node:16-alpine AS base
 
 ENV APP_PATH=/app
 
-ARG PNPM_VERSION=7.1.9
+ARG PNPM_VERSION=7.16.1
 
 RUN npm -g install pnpm@${PNPM_VERSION} --registry=https://registry.npm.taobao.org/
 
