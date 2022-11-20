@@ -23,7 +23,7 @@ RUN apk add --no-cache --update nodejs
 #  apk del curl
 
 RUN apk add --no-cache curl && \
-  curl -fsSL https://get.pnpm.io/v6.16.js | node - add --global pnpm && \
+  curl -fsSL https://get.pnpm.io/install.sh | sh - | node - add --global pnpm && \
   apk del curl && \
   mv /root/.local/share/pnpm/pnpm /usr/bin/
 
