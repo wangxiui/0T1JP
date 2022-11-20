@@ -4,8 +4,10 @@
 FROM node:16-alpine AS base
 #纯净版镜像
 
-ENV NODE_ENV=production \
-  APP_PATH=/app
+#ENV NODE_ENV=production \
+#  APP_PATH=/app
+
+ENV APP_PATH=/app
 
 ARG PNPM_VERSION=7.1.9
 
