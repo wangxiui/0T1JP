@@ -27,9 +27,9 @@ RUN apk add --no-cache --update nodejs npm && \
 # 2. 基于基础镜像安装项目依赖
 FROM base AS install
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-RUN pnpm install --registry=https://registry.npm.taobao.org/
+RUN pnpm install --frozen-lockfile
 
 # 3. 基于基础镜像进行最终构建
 FROM base
