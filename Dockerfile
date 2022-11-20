@@ -14,8 +14,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 # 使用apk命令安装 nodejs(最新) 和 pnpm（https://github.com/pnpm/pnpm/issues/784）
 #apk add --no-cache nodejs-current --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
-RUN apk add --no-cache --update nodejs npm && \
-    npm i -g pnpm --registry=https://registry.npm.taobao.org/
+RUN apk add --no-cache --update nodejs curl && \
+    curl -sL https://unpkg.com/@pnpm/self-installer | node
 
 #You can use this URL to get the latest pnpm release (REF):
 #https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64
@@ -29,7 +29,7 @@ FROM base AS install
 
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm i --registry=https://registry.npm.taobao.org/ --frozen-lockfile
 
 # 3. 基于基础镜像进行最终构建
 FROM base
